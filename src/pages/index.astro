@@ -1,0 +1,910 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Főoldal">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg">
+      <img
+        src="https://images.unsplash.com/photo-1585747860019-8e8ef2a0ea91?w=1920&q=80"
+        alt="Borbélyszalon belső tere"
+        loading="eager"
+      />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="container hero__content">
+      <span class="hero__label">Prémium Borbélyszalon</span>
+      <h1 class="hero__title">Ahol a stílus<br />művészetté válik</h1>
+      <p class="hero__desc">
+        Modern technikák, hagyományos értékek. Tapasztalt borbélyaink segítenek
+        megtalálni az Önhöz illő stílust egy nyugodt, prémium környezetben.
+      </p>
+      <div class="hero__actions">
+        <a href="/kapcsolat#idopontfoglalas" class="btn btn--primary">Időpontfoglalás</a>
+        <a href="/szolgaltatasok" class="btn btn--outline">Szolgáltatásaink</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>Görgessen lejjebb</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features section">
+    <div class="container">
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Online Foglalás</h3>
+          <p class="feature-card__desc">Foglaljon időpontot egyszerűen, bármikor, akár a telefonjáról is.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Prémium Minőség</h3>
+          <p class="feature-card__desc">Kizárólag professzionális termékeket és eszközöket használunk.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Szakértő Csapat</h3>
+          <p class="feature-card__desc">Tapasztalt, folyamatosan képzett borbélyok várják vendégeinket.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="feature-card__title">Egyedi Élmény</h3>
+          <p class="feature-card__desc">Személyre szabott szolgáltatás és nyugodt, inspiráló környezet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <section class="about-preview section">
+    <div class="container about-preview__inner">
+      <div class="about-preview__image">
+        <img
+          src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80"
+          alt="Borbély munka közben"
+          loading="lazy"
+        />
+        <div class="about-preview__badge">
+          <span class="about-preview__badge-number">10+</span>
+          <span class="about-preview__badge-text">Év tapasztalat</span>
+        </div>
+      </div>
+      <div class="about-preview__content">
+        <span class="section-header__label">Rólunk</span>
+        <h2>Ahol a tradíció<br />és a modern stílus találkozik</h2>
+        <p>
+          Szalonunk több mint egy borbélyüzlet – egy olyan hely, ahol a férfiak megtalálják
+          a saját stílusukat. Prémium szolgáltatásaink és nyugodt légkörünk garantálják,
+          hogy minden látogatás egy különleges élmény legyen.
+        </p>
+        <p>
+          Csapatunk tagjai folyamatosan képzik magukat a legújabb technikákban és
+          trendekben, hogy mindig a legjobb eredményt nyújthassuk.
+        </p>
+        <div class="about-preview__stats">
+          <div class="about-preview__stat">
+            <span class="about-preview__stat-number">5000+</span>
+            <span class="about-preview__stat-label">Elégedett vendég</span>
+          </div>
+          <div class="about-preview__stat">
+            <span class="about-preview__stat-number">15+</span>
+            <span class="about-preview__stat-label">Szolgáltatás</span>
+          </div>
+          <div class="about-preview__stat">
+            <span class="about-preview__stat-number">4.9</span>
+            <span class="about-preview__stat-label">Google értékelés</span>
+          </div>
+        </div>
+        <a href="/rolunk" class="btn btn--dark">Tudjon meg többet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="services-preview section section--light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Szolgáltatásaink</span>
+        <h2 class="section-header__title">Prémium szolgáltatások<br />minden igényre</h2>
+        <p class="section-header__desc">
+          Legyen szó klasszikus hajvágásról vagy komplett átalakításról, nálunk
+          megtalálja a tökéletes szolgáltatást.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=600&q=80"
+              alt="Hajvágás"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Klasszikus Hajvágás</h3>
+            <p class="service-card__desc">Precíz hajvágás konzultációval, mosással és styling-gal.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">5 500 Ft-tól</span>
+              <span class="service-card__duration">45 perc</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=600&q=80"
+              alt="Szakállvágás"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Szakálligazítás</h3>
+            <p class="service-card__desc">Professzionális szakállformázás trimmerrel és ollóval.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">3 500 Ft-tól</span>
+              <span class="service-card__duration">30 perc</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&q=80"
+              alt="Meleg törölközős borotválás"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Királyi Borotválás</h3>
+            <p class="service-card__desc">Hagyományos meleg törölközős borotválás prémium termékekkel.</p>
+            <div class="service-card__footer">
+              <span class="service-card__price">4 500 Ft-tól</span>
+              <span class="service-card__duration">40 perc</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card service-card--cta">
+          <div class="service-card__cta-content">
+            <h3>VIP Csomag</h3>
+            <p>Hajvágás + Szakállvágás + Borotválás + Arckezelés – a teljes élmény egy helyen.</p>
+            <span class="service-card__price" style="color: var(--color-secondary); font-size: 1.5rem;">12 500 Ft</span>
+            <a href="/kapcsolat#idopontfoglalas" class="btn btn--primary" style="margin-top: 20px;">Foglaljon most</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="/szolgaltatasok" class="btn btn--dark">Összes szolgáltatás</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="gallery-preview section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Galéria</span>
+        <h2 class="section-header__title">Munkáink</h2>
+        <p class="section-header__desc">Íme néhány példa borbélyaink munkáiból.</p>
+      </div>
+
+      <div class="gallery-preview__grid">
+        <div class="gallery-preview__item gallery-preview__item--large">
+          <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&q=80" alt="Hajvágás eredmény" loading="lazy" />
+        </div>
+        <div class="gallery-preview__item">
+          <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&q=80" alt="Borotválás" loading="lazy" />
+        </div>
+        <div class="gallery-preview__item">
+          <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=600&q=80" alt="Modern frizura" loading="lazy" />
+        </div>
+        <div class="gallery-preview__item">
+          <img src="https://images.unsplash.com/photo-1634480015438-542af8ba7024?w=600&q=80" alt="Szakállformázás" loading="lazy" />
+        </div>
+        <div class="gallery-preview__item">
+          <img src="https://images.unsplash.com/photo-1493256338651-d82f7acb2b38?w=600&q=80" alt="Szalon belső" loading="lazy" />
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="/galeria" class="btn btn--dark">Teljes galéria</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Vélemények</span>
+        <h2 class="section-header__title">Vendégeink mondták</h2>
+        <p class="section-header__desc">
+          Büszkék vagyunk arra, hogy vendégeink elégedetten távoznak.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Évek óta ide járok, és minden alkalommal tökéletes eredményt kapok.
+            A csapat profi, a környezet nyugodt és elegáns. Csak ajánlani tudom!"
+          </p>
+          <div class="testimonial-card__author">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+              alt="Kovács Péter"
+              loading="lazy"
+            />
+            <div>
+              <strong>Kovács Péter</strong>
+              <span>Törzsvásárló</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Először jártam itt, és azonnal lenyűgözött a hely. Az online foglalás
+            egyszerű volt, a borbély pedig pontosan azt hozta, amit kértem."
+          </p>
+          <div class="testimonial-card__author">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80"
+              alt="Nagy Tamás"
+              loading="lazy"
+            />
+            <div>
+              <strong>Nagy Tamás</strong>
+              <span>Új vendég</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "A VIP csomag egyszerűen fantasztikus! A meleg törölközős borotválás
+            után úgy éreztem magam, mint egy király. Következő időpont már lefoglalva!"
+          </p>
+          <div class="testimonial-card__author">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80"
+              alt="Szabó Gábor"
+              loading="lazy"
+            />
+            <div>
+              <strong>Szabó Gábor</strong>
+              <span>VIP vendég</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta section">
+    <div class="container cta__inner">
+      <div class="cta__content">
+        <span class="section-header__label">Készen áll?</span>
+        <h2>Foglalja le időpontját<br />még ma!</h2>
+        <p>
+          Ne várjon tovább – válassza ki a megfelelő időpontot online, és
+          bízza magát szakértő borbélyainkra.
+        </p>
+        <div class="cta__actions">
+          <a href="/kapcsolat#idopontfoglalas" class="btn btn--primary">Online foglalás</a>
+          <a href="tel:+3612345678" class="btn btn--outline" style="color: var(--color-primary); border-color: var(--color-gray-300);">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +36 1 234 5678
+          </a>
+        </div>
+      </div>
+      <div class="cta__image">
+        <img
+          src="https://images.unsplash.com/photo-1521490683712-35a1cb235d1c?w=600&q=80"
+          alt="Borbélyszék"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+    <div class="map-section__overlay">
+      <div class="map-section__card">
+        <h3>Látogasson el hozzánk!</h3>
+        <p>1234 Budapest, Fő utca 12.</p>
+        <p>Hétfő – Péntek: 9:00 – 20:00</p>
+        <p>Szombat: 9:00 – 16:00</p>
+        <a href="/kapcsolat" class="btn btn--primary" style="margin-top: 16px;">Útvonaltervezés</a>
+      </div>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.7!2d19.0402!3d47.4979!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI5JzUyLjQiTiAxOcKwMDInMjQuNyJF!5e0!3m2!1shu!2shu!4v1"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="SALON Barber Shop helyszíne a térképen"
+    ></iframe>
+  </section>
+</BaseLayout>
+
+<style>
+  /* --- HERO --- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(15, 15, 26, 0.85) 0%,
+      rgba(26, 26, 46, 0.7) 50%,
+      rgba(15, 15, 26, 0.8) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .hero__label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    animation: fadeInUp 0.6s ease;
+  }
+
+  .hero__title {
+    color: var(--color-white);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    margin-bottom: 24px;
+    animation: fadeInUp 0.6s ease 0.15s both;
+  }
+
+  .hero__desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 540px;
+    animation: fadeInUp 0.6s ease 0.3s both;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease 0.45s both;
+  }
+
+  .hero__scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--color-secondary), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  @media (max-width: 640px) {
+    .hero__content {
+      padding-top: 140px;
+      padding-bottom: 100px;
+    }
+  }
+
+  /* --- FEATURES --- */
+  .features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition-base);
+  }
+
+  .feature-card:hover {
+    border-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .feature-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(201, 169, 110, 0.1), rgba(212, 175, 55, 0.1));
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+  }
+
+  .feature-card__title {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .feature-card__desc {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .features__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .features__grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- ABOUT PREVIEW --- */
+  .about-preview__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-preview__image {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .about-preview__image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .about-preview__badge {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 20px 28px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-preview__badge-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .about-preview__badge-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .about-preview__content h2 {
+    margin-bottom: 24px;
+  }
+
+  .about-preview__stats {
+    display: flex;
+    gap: 36px;
+    margin: 32px 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .about-preview__stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+  }
+
+  .about-preview__stat-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 900px) {
+    .about-preview__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-preview__image img {
+      height: 350px;
+    }
+  }
+
+  /* --- SERVICES PREVIEW --- */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .service-card__image {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .service-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .service-card:hover .service-card__image img {
+    transform: scale(1.05);
+  }
+
+  .service-card__body {
+    padding: 24px;
+  }
+
+  .service-card__title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .service-card__desc {
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+  }
+
+  .service-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-gray-200);
+  }
+
+  .service-card__price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.05rem;
+  }
+
+  .service-card__duration {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+  }
+
+  .service-card--cta {
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .service-card--cta:hover {
+    background: var(--color-dark);
+  }
+
+  .service-card__cta-content {
+    padding: 32px;
+  }
+
+  .service-card__cta-content h3 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .service-card__cta-content p {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
+
+  /* --- GALLERY PREVIEW --- */
+  .gallery-preview__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    gap: 16px;
+  }
+
+  .gallery-preview__item {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .gallery-preview__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .gallery-preview__item:hover img {
+    transform: scale(1.05);
+  }
+
+  .gallery-preview__item--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-preview__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+
+    .gallery-preview__item--large {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .gallery-preview__item {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-preview__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-preview__item--large {
+      grid-column: span 1;
+    }
+  }
+
+  /* --- TESTIMONIALS --- */
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    transition: all var(--transition-base);
+  }
+
+  .testimonial-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(201, 169, 110, 0.3);
+  }
+
+  .testimonial-card__stars {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card__text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .testimonial-card__author img {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .testimonial-card__author strong {
+    display: block;
+    color: var(--color-white);
+    font-size: 0.95rem;
+  }
+
+  .testimonial-card__author span {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+  }
+
+  /* --- CTA --- */
+  .cta__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .cta__content h2 {
+    margin-bottom: 16px;
+  }
+
+  .cta__content p {
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+
+  .cta__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .cta__image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .cta__image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .cta__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .cta__image {
+      order: -1;
+    }
+  }
+
+  /* --- MAP --- */
+  .map-section {
+    position: relative;
+    height: 450px;
+  }
+
+  .map-section iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .map-section__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+  }
+
+  .map-section__card {
+    background: var(--color-white);
+    padding: 36px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    max-width: 340px;
+  }
+
+  .map-section__card h3 {
+    margin-bottom: 12px;
+  }
+
+  .map-section__card p {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: 640px) {
+    .map-section__overlay {
+      padding: 16px;
+      align-items: flex-end;
+      padding-bottom: 24px;
+    }
+  }
+</style>

@@ -1,0 +1,312 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const team = [
+  {
+    name: 'Tóth László',
+    role: 'Alapító & Vezető Borbély',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80',
+    bio: 'Több mint 15 éves tapasztalattal rendelkezik a borbélyszakmában.',
+  },
+  {
+    name: 'Kiss Máté',
+    role: 'Senior Borbély',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80',
+    bio: 'A modern fade technikák és a kreatív hajformázás mestere.',
+  },
+  {
+    name: 'Varga Dániel',
+    role: 'Borbély & Szakáll Specialista',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80',
+    bio: 'Szakállápolás és formázás területén szerzett különleges szaktudást.',
+  },
+  {
+    name: 'Horváth Bence',
+    role: 'Junior Borbély',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&q=80',
+    bio: 'Fiatal, kreatív tehetség, aki a legújabb trendeket hozza el.',
+  },
+];
+
+const values = [
+  { icon: '✂', title: 'Mesterség', desc: 'A borbélyság számunkra nem csupán munka, hanem szenvedély és mesterség.' },
+  { icon: '💎', title: 'Minőség', desc: 'Csak a legjobb termékeket és eszközöket használjuk, kompromisszumok nélkül.' },
+  { icon: '🤝', title: 'Személyes figyelem', desc: 'Minden vendég egyedi – szolgáltatásainkat az Ön igényeihez igazítjuk.' },
+  { icon: '🔄', title: 'Fejlődés', desc: 'Folyamatosan képezzük magunkat, hogy a legújabb technikákat kínáljuk.' },
+];
+---
+
+<BaseLayout
+  title="Rólunk"
+  description="Ismerje meg a SALON csapatát és történetünket. Prémium borbélyszalon Budapesten, több mint 10 év tapasztalattal."
+>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <img src="https://images.unsplash.com/photo-1585747860019-8e8ef2a0ea91?w=1920&q=80" alt="Szalon belső tér" loading="eager" />
+      <div class="page-hero__overlay"></div>
+    </div>
+    <div class="container page-hero__content">
+      <span class="section-header__label">Történetünk</span>
+      <h1>Rólunk</h1>
+      <p>Ismerje meg a csapatot és értékeinket</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section">
+    <div class="container story">
+      <div class="story__image">
+        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&q=80" alt="Szalon részlet" loading="lazy" />
+      </div>
+      <div class="story__content">
+        <span class="section-header__label">A kezdetek</span>
+        <h2>Több mint egy borbélyüzlet</h2>
+        <p>
+          A SALON-t 2014-ben alapítottuk azzal a céllal, hogy egy olyan helyet hozzunk
+          létre, ahol a hagyományos borbélymesterség találkozik a modern stílussal és
+          kényelemmel.
+        </p>
+        <p>
+          Azóta több ezer elégedett vendéget szolgáltunk ki, és büszkén mondhatjuk, hogy
+          szalonunk Budapest egyik legkeresettebb borbélyműhelye lett.
+        </p>
+        <p>
+          Filozófiánk egyszerű: minden vendégünk megérdemli a legjobb minőséget, a
+          személyes figyelmet és egy nyugodt, inspiráló környezetet, ahol kikapcsolódhat
+          a mindennapok forgatagából.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Értékeink</span>
+        <h2 class="section-header__title">Amiben hiszünk</h2>
+      </div>
+
+      <div class="grid grid--4">
+        {values.map((v) => (
+          <div class="value-card">
+            <span class="value-card__icon">{v.icon}</span>
+            <h3 class="value-card__title">{v.title}</h3>
+            <p class="value-card__desc">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Csapatunk</span>
+        <h2 class="section-header__title">Ismerje meg borbélyainkat</h2>
+        <p class="section-header__desc">
+          Tapasztalt, szenvedélyes szakemberek, akik a legjobb eredményt szeretnék elérni minden vendég számára.
+        </p>
+      </div>
+
+      <div class="grid grid--4">
+        {team.map((member) => (
+          <div class="team-card">
+            <div class="team-card__image">
+              <img src={member.image} alt={member.name} loading="lazy" />
+            </div>
+            <div class="team-card__body">
+              <h3 class="team-card__name">{member.name}</h3>
+              <span class="team-card__role">{member.role}</span>
+              <p class="team-card__bio">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark" style="text-align: center;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Csatlakozzon hozzánk</span>
+        <h2 class="section-header__title">Látogasson el szalonunkba!</h2>
+        <p class="section-header__desc">
+          Foglaljon időpontot és tapasztalja meg a SALON prémium élményt személyesen.
+        </p>
+      </div>
+      <a href="/kapcsolat#idopontfoglalas" class="btn btn--primary">Időpontfoglalás</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .page-hero__bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 26, 0.75);
+  }
+
+  .page-hero__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .page-hero__content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+  }
+
+  /* STORY */
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .story__image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+  }
+
+  .story__image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+  }
+
+  .story__content h2 {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .story {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .story__image img {
+      height: 300px;
+    }
+  }
+
+  /* VALUES */
+  .value-card {
+    text-align: center;
+    padding: 36px 24px;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition-base);
+  }
+
+  .value-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .value-card__icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .value-card__title {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .value-card__desc {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  /* TEAM */
+  .team-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition-base);
+  }
+
+  .team-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .team-card__image {
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .team-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .team-card:hover .team-card__image img {
+    transform: scale(1.05);
+  }
+
+  .team-card__body {
+    padding: 24px;
+  }
+
+  .team-card__name {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .team-card__role {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .team-card__bio {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+</style>

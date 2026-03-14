@@ -1,0 +1,167 @@
+---
+const gaId = import.meta.env.PUBLIC_GA_ID || '';
+const fbPixelId = import.meta.env.PUBLIC_FB_PIXEL_ID || '';
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"
+></script>
+
+<script is:inline define:vars={{ gaId, fbPixelId }}>
+  window.addEventListener('load', function () {
+    if (typeof CookieConsent === 'undefined') return;
+
+    CookieConsent.run({
+      guiOptions: {
+        consentModal: {
+          layout: 'box inline',
+          position: 'bottom right',
+        },
+        preferencesModal: {
+          layout: 'box',
+        },
+      },
+
+      categories: {
+        necessary: {
+          enabled: true,
+          readOnly: true,
+        },
+        analytics: {
+          autoClear: {
+            cookies: [
+              { name: /^_ga/ },
+              { name: '_gid' },
+            ],
+          },
+        },
+        marketing: {
+          autoClear: {
+            cookies: [
+              { name: '_fbp' },
+              { name: '_fbc' },
+            ],
+          },
+        },
+      },
+
+      language: {
+        default: 'hu',
+        translations: {
+          hu: {
+            consentModal: {
+              title: 'Cookie beállítások',
+              description:
+                'Weboldalunk cookie-kat használ a felhasználói élmény javítása, a forgalom elemzése és a marketing kampányok hatékonyságának mérése érdekében. <a href="/adatvedelmi-tajekoztato" class="cc-link">Adatvédelmi tájékoztató</a>',
+              acceptAllBtn: 'Elfogadom',
+              acceptNecessaryBtn: 'Csak szükségesek',
+              showPreferencesBtn: 'Testreszabás',
+            },
+            preferencesModal: {
+              title: 'Cookie beállítások',
+              acceptAllBtn: 'Mindent elfogadok',
+              acceptNecessaryBtn: 'Csak szükségesek',
+              savePreferencesBtn: 'Beállítások mentése',
+              sections: [
+                {
+                  title: 'Cookie használat',
+                  description:
+                    'Weboldalunk cookie-kat használ a megfelelő működés biztosításához, valamint az Ön böngészési élményének javításához.',
+                },
+                {
+                  title: 'Szükséges cookie-k',
+                  description:
+                    'Ezek a cookie-k elengedhetetlenek a weboldal alapvető működéséhez. Nem gyűjtenek személyes adatokat.',
+                  linkedCategory: 'necessary',
+                },
+                {
+                  title: 'Analitika cookie-k',
+                  description:
+                    'Ezek a cookie-k segítenek megérteni, hogyan használják a látogatók a weboldalunkat a Google Analytics segítségével.',
+                  linkedCategory: 'analytics',
+                },
+                {
+                  title: 'Marketing cookie-k',
+                  description:
+                    'Ezeket a cookie-kat marketing célokra használjuk, beleértve a Facebook Pixel-t, hogy releváns hirdetéseket jeleníthessünk meg.',
+                  linkedCategory: 'marketing',
+                },
+              ],
+            },
+          },
+        },
+      },
+
+      onConsent: function () {
+        if (CookieConsent.acceptedCategory('analytics') && gaId) {
+          loadGoogleAnalytics();
+        }
+        if (CookieConsent.acceptedCategory('marketing') && fbPixelId) {
+          loadFacebookPixel();
+        }
+      },
+
+      onChange: function () {
+        if (CookieConsent.acceptedCategory('analytics') && gaId) {
+          loadGoogleAnalytics();
+        }
+        if (CookieConsent.acceptedCategory('marketing') && fbPixelId) {
+          loadFacebookPixel();
+        }
+      },
+    });
+
+    function loadGoogleAnalytics() {
+      if (document.querySelector('script[src*="googletagmanager"]')) return;
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaId;
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', gaId, { anonymize_ip: true });
+    }
+
+    function loadFacebookPixel() {
+      if (window.fbq) return;
+
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = true;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+      window.fbq('init', fbPixelId);
+      window.fbq('track', 'PageView');
+    }
+  });
+</script>
+
+<style is:global>
+  .cc-window {
+    border-radius: var(--radius-lg) !important;
+    font-family: var(--font-body) !important;
+  }
+
+  .cc-btn {
+    border-radius: var(--radius-full) !important;
+  }
+</style>

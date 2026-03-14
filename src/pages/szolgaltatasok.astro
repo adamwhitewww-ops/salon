@@ -1,0 +1,397 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  {
+    category: 'Hajvágás',
+    items: [
+      { name: 'Klasszikus Hajvágás', desc: 'Precíz hajvágás konzultációval, mosással és styling-gal.', price: '5 500 Ft', duration: '45 perc' },
+      { name: 'Fade / Skin Fade', desc: 'Modern átmenetes hajvágás, tökéletes átmenetekkel.', price: '6 000 Ft', duration: '50 perc' },
+      { name: 'Buzz Cut', desc: 'Gépi hajvágás egyenletes vagy választott hosszúságban.', price: '3 500 Ft', duration: '20 perc' },
+      { name: 'Gyermek Hajvágás', desc: 'Hajvágás 12 év alatti gyermekek számára. (szülő kíséretében)', price: '4 000 Ft', duration: '30 perc' },
+      { name: 'Hajformázás / Styling', desc: 'Hajmosás és professzionális formázás prémium termékekkel.', price: '3 000 Ft', duration: '25 perc' },
+    ],
+  },
+  {
+    category: 'Szakáll & Borotválás',
+    items: [
+      { name: 'Szakálligazítás', desc: 'Professzionális szakállformázás trimmerrel és ollóval.', price: '3 500 Ft', duration: '30 perc' },
+      { name: 'Királyi Borotválás', desc: 'Hagyományos meleg törölközős borotválás prémium termékekkel.', price: '4 500 Ft', duration: '40 perc' },
+      { name: 'Szakáll Színezés', desc: 'Természetes hatású szakállfestés, szürke szálak eltüntetése.', price: '5 000 Ft', duration: '35 perc' },
+      { name: 'Kontúr Borotválás', desc: 'Nyak- és arckontúr pontos kialakítása borotvával.', price: '2 500 Ft', duration: '15 perc' },
+    ],
+  },
+  {
+    category: 'Speciális Kezelések',
+    items: [
+      { name: 'Hajfestés', desc: 'Professzionális hajfestés természetes vagy élénk árnyalatokban.', price: '8 000 Ft-tól', duration: '60-90 perc' },
+      { name: 'Fejbőr Kezelés', desc: 'Mélytisztító és tápláló fejbőrkezelés.', price: '4 500 Ft', duration: '30 perc' },
+      { name: 'Arckezelés Férfiaknak', desc: 'Tisztító arckezelés férfi bőrre optimalizált termékekkel.', price: '6 000 Ft', duration: '40 perc' },
+      { name: 'Szemöldök Igazítás', desc: 'Pontos szemöldökformázás viasszal vagy csipesszel.', price: '2 000 Ft', duration: '15 perc' },
+      { name: 'Orrszőr / Fülszőr Eltávolítás', desc: 'Gyors és fájdalommentes szőrtelenítés viasszal.', price: '1 500 Ft', duration: '10 perc' },
+    ],
+  },
+];
+
+const packages = [
+  {
+    name: 'Klasszikus Csomag',
+    desc: 'Hajvágás + Szakálligazítás',
+    price: '8 000 Ft',
+    originalPrice: '9 000 Ft',
+    features: ['Konzultáció', 'Hajmosás', 'Hajvágás', 'Szakállformázás', 'Styling'],
+  },
+  {
+    name: 'VIP Csomag',
+    desc: 'A teljes prémium élmény',
+    price: '12 500 Ft',
+    originalPrice: '17 500 Ft',
+    featured: true,
+    features: ['Konzultáció', 'Hajmosás', 'Hajvágás', 'Szakállformázás', 'Királyi Borotválás', 'Arckezelés', 'Fejmasszázs', 'Prémium styling'],
+  },
+  {
+    name: 'Gentleman Csomag',
+    desc: 'Hajvágás + Borotválás',
+    price: '9 000 Ft',
+    originalPrice: '10 000 Ft',
+    features: ['Konzultáció', 'Hajmosás', 'Hajvágás', 'Királyi Borotválás', 'Styling'],
+  },
+];
+---
+
+<BaseLayout
+  title="Szolgáltatások"
+  description="Fedezze fel prémium borbélyszolgáltatásainkat: hajvágás, szakállvágás, borotválás, hajfestés és speciális kezelések. Online időpontfoglalás."
+>
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <img
+        src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1920&q=80"
+        alt="Borbély eszközök"
+        loading="eager"
+      />
+      <div class="page-hero__overlay"></div>
+    </div>
+    <div class="container page-hero__content">
+      <span class="section-header__label">Amit kínálunk</span>
+      <h1>Szolgáltatásaink</h1>
+      <p>Prémium szolgáltatások a tökéletes megjelenésért</p>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="section packages-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Csomagajánlatok</span>
+        <h2 class="section-header__title">Kedvezményes csomagok</h2>
+        <p class="section-header__desc">
+          Válassza valamelyik csomagunkat, és takarítson meg a szolgáltatások külön-külön áraival szemben.
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        {packages.map((pkg) => (
+          <div class:list={['package-card', { 'package-card--featured': pkg.featured }]}>
+            {pkg.featured && <div class="package-card__badge">Legnépszerűbb</div>}
+            <h3 class="package-card__name">{pkg.name}</h3>
+            <p class="package-card__desc">{pkg.desc}</p>
+            <div class="package-card__pricing">
+              <span class="package-card__price">{pkg.price}</span>
+              <span class="package-card__original">{pkg.originalPrice}</span>
+            </div>
+            <ul class="package-card__features">
+              {pkg.features.map((f) => (
+                <li>
+                  <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <a href="/kapcsolat#idopontfoglalas" class:list={['btn', pkg.featured ? 'btn--primary' : 'btn--dark']}>
+              Foglalás
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE LIST -->
+  {services.map((category) => (
+    <section class:list={['section', services.indexOf(category) % 2 === 0 ? 'section--light' : '']}>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-header__label">Szolgáltatások</span>
+          <h2 class="section-header__title">{category.category}</h2>
+        </div>
+
+        <div class="service-list">
+          {category.items.map((item) => (
+            <div class="service-list__item">
+              <div class="service-list__info">
+                <h3 class="service-list__name">{item.name}</h3>
+                <p class="service-list__desc">{item.desc}</p>
+              </div>
+              <div class="service-list__meta">
+                <span class="service-list__duration">{item.duration}</span>
+                <span class="service-list__price">{item.price}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="section section--dark" style="text-align: center;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Készen áll?</span>
+        <h2 class="section-header__title">Foglalja le időpontját még ma!</h2>
+        <p class="section-header__desc">
+          Válasszon szolgáltatást és foglaljon online – gyorsan, egyszerűen.
+        </p>
+      </div>
+      <a href="/kapcsolat#idopontfoglalas" class="btn btn--primary">Online foglalás</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* --- PAGE HERO --- */
+  .page-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .page-hero__bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 26, 0.75);
+  }
+
+  .page-hero__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .page-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .page-hero__content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+  }
+
+  /* --- PACKAGES --- */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .package-card {
+    position: relative;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-xl);
+    padding: 40px 32px;
+    text-align: center;
+    transition: all var(--transition-base);
+  }
+
+  .package-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .package-card--featured {
+    background: var(--color-primary);
+    border-color: transparent;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .package-card--featured:hover {
+    transform: scale(1.05) translateY(-4px);
+  }
+
+  .package-card--featured .package-card__name,
+  .package-card--featured .package-card__price {
+    color: var(--color-white);
+  }
+
+  .package-card--featured .package-card__desc,
+  .package-card--featured .package-card__features li {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .package-card--featured .package-card__features svg {
+    color: var(--color-secondary);
+  }
+
+  .package-card__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 6px 20px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .package-card__name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .package-card__desc {
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+  }
+
+  .package-card__pricing {
+    margin-bottom: 28px;
+  }
+
+  .package-card__price {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .package-card__original {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    text-decoration: line-through;
+    margin-top: 4px;
+  }
+
+  .package-card--featured .package-card__original {
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  .package-card__features {
+    text-align: left;
+    margin-bottom: 32px;
+  }
+
+  .package-card__features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+  }
+
+  .package-card__features svg {
+    flex-shrink: 0;
+    color: var(--color-secondary);
+  }
+
+  .package-card .btn {
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .packages-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    .package-card--featured { transform: none; }
+    .package-card--featured:hover { transform: translateY(-4px); }
+  }
+
+  /* --- SERVICE LIST --- */
+  .service-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .service-list__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .service-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .service-list__name {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .service-list__desc {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+  }
+
+  .service-list__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .service-list__price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+  }
+
+  .service-list__duration {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+
+  @media (max-width: 640px) {
+    .service-list__item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .service-list__meta {
+      align-items: flex-start;
+      flex-direction: row;
+      gap: 16px;
+    }
+  }
+</style>
