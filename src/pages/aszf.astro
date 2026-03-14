@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Általános Szerződési Feltételek" noindex={true}>
+  <section class="legal-page section" style="padding-top: 140px;">
+    <div class="container legal-content">
+      <h1>Általános Szerződési Feltételek (ÁSZF)</h1>
+      <p class="legal-content__updated">Utolsó frissítés: 2024. január 1.</p>
+
+      <h2>1. Szolgáltató adatai</h2>
+      <p>
+        Cégnév: SALON Barber Shop Kft.<br/>
+        Székhely: 1234 Budapest, Fő utca 12.<br/>
+        Adószám: 12345678-1-42<br/>
+        Cégjegyzékszám: 01-09-123456<br/>
+        E-mail: info@salon-barber.hu
+      </p>
+
+      <h2>2. Időpontfoglalás és lemondás</h2>
+      <p>
+        Az időpontfoglalás a Cal.com rendszeren keresztül történik. A foglalás visszaigazolása
+        e-mailben érkezik meg. Az időpontot legkésőbb 24 órával a foglalt időpont előtt
+        lehet lemondani vagy módosítani díjmentesen.
+      </p>
+
+      <h2>3. Árak</h2>
+      <p>
+        Minden ár magyar forintban (HUF) értendő és tartalmazza az ÁFA-t. Az árak változtatásának
+        jogát fenntartjuk, de a már visszaigazolt foglalásokra a foglaláskor érvényes árak vonatkoznak.
+      </p>
+
+      <h2>4. Fizetés</h2>
+      <p>
+        Szalonunkban készpénzzel és bankkártyával egyaránt fizethet. A fizetés a szolgáltatás
+        igénybevételekor esedékes.
+      </p>
+
+      <h2>5. Felelősség</h2>
+      <p>
+        A szolgáltatás igénybevétele során minden szükséges allergia- és érzékenységi
+        információt kérjük jelezni borbélyainknak. A szolgáltató nem vállal felelősséget
+        az el nem mondott egészségügyi problémákból eredő kellemetlenségekért.
+      </p>
+
+      <h2>6. Panaszkezelés</h2>
+      <p>
+        Panaszát személyesen, e-mailben vagy telefonon jelezheti. Panaszát 30 napon belül
+        kivizsgáljuk és válaszolunk.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-content {
+    max-width: 800px;
+  }
+
+  .legal-content h1 {
+    margin-bottom: 8px;
+  }
+
+  .legal-content__updated {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+  }
+
+  .legal-content h2 {
+    font-size: 1.3rem;
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+
+  .legal-content p,
+  .legal-content li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+</style>

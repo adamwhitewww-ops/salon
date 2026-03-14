@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Az oldal nem található" noindex={true}>
+  <section class="not-found">
+    <div class="container not-found__content">
+      <span class="not-found__code">404</span>
+      <h1>Az oldal nem található</h1>
+      <p>A keresett oldal nem létezik vagy áthelyezésre került.</p>
+      <a href="/" class="btn btn--primary">Vissza a főoldalra</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-gray-100);
+  }
+
+  .not-found__code {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.3;
+  }
+
+  .not-found h1 {
+    margin-bottom: 12px;
+  }
+
+  .not-found p {
+    margin-bottom: 32px;
+    font-size: 1.05rem;
+  }
+</style>

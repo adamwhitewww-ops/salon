@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Impresszum" noindex={true}>
+  <section class="legal-page section" style="padding-top: 140px;">
+    <div class="container legal-content">
+      <h1>Impresszum</h1>
+      <p class="legal-content__updated">Utolsó frissítés: 2024. január 1.</p>
+
+      <h2>Üzemeltető</h2>
+      <p>
+        SALON Barber Shop Kft.<br/>
+        1234 Budapest, Fő utca 12.<br/>
+        Adószám: 12345678-1-42<br/>
+        Cégjegyzékszám: 01-09-123456
+      </p>
+
+      <h2>Kapcsolat</h2>
+      <p>
+        Telefon: +36 1 234 5678<br/>
+        E-mail: info@salon-barber.hu<br/>
+        Weboldal: www.salon-barber.hu
+      </p>
+
+      <h2>Tárhely szolgáltató</h2>
+      <p>
+        Név: Vercel Inc.<br/>
+        Cím: 340 S Lemon Ave #4133, Walnut, CA 91789, USA<br/>
+        Weboldal: www.vercel.com
+      </p>
+
+      <h2>Szellemi tulajdon</h2>
+      <p>
+        A weboldalon megjelenő szövegek, képek, grafikák és egyéb tartalmak a SALON Barber Shop Kft.
+        szellemi tulajdonát képezik. Ezek bármilyen felhasználásához a tulajdonos írásbeli
+        hozzájárulása szükséges.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal-content {
+    max-width: 800px;
+  }
+
+  .legal-content h1 {
+    margin-bottom: 8px;
+  }
+
+  .legal-content__updated {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+  }
+
+  .legal-content h2 {
+    font-size: 1.3rem;
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+
+  .legal-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+</style>
